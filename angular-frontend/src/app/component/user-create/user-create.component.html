@@ -1,0 +1,34 @@
+<div class="table">
+  <form [formGroup]="createUserForm" class="col-7 ms-auto me-auto border" novalidate>
+    <fieldset class="p-3">
+      <legend class="text-center bg-light border font-weight-bold">
+        Create User
+      </legend>
+      <div class="form-group">
+        <label for="name">UserName</label>
+        <input class="form-control" [ngClass]="{
+              'is-invalid': name.invalid && name.touched
+            }" type="text" id="name" name="name" placeholder="name" formControlName="name" />
+        <small class="invalid-feedback">Name can contains only letters -at least 2, at most 50.</small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" [ngClass]="{
+              'is-invalid': email.invalid && email.touched
+            }" type="text" id="email" name="email" placeholder="email@example.com" formControlName="email" />
+        <small class="invalid-feedback">Please enter a valid email address: email@example.com</small>
+      </div>
+      <div class="d-grid col">
+        <button class="btn btn-success" type="button" [disabled]="isLoading" (click)="onPost()">
+          Create
+        </button>
+      </div>
+      <button class="btn btn-outline-primary mt-3 ms-2" (click)="onBack()">
+        Back to Users List
+      </button>
+      <p class="alert alert-success mt-3" *ngIf="feedback.msg">
+        {{ feedback.msg }}
+      </p>
+    </fieldset>
+  </form>
+</div>

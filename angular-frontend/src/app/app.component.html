@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand ms-5" routerLinkActive="active" routerLink="/home"
+    ><p class="h1"><strong>Ciao User</strong> Mi hai scoperto</p></a
+  >
+  <button
+    class="navbar-toggler me-3"
+    type="button"
+    (click)="collapsed = !collapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse" [ngClass]="collapsed && 'collapse'">
+    <ul class="navbar-nav mr-auto ms-5 h5">
+      <li class="nav-item active">
+        <a class="nav-link" routerLinkActive="active" routerLink="/home"
+          >Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/user-list"
+          >View Users Scoperti</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/user-create"
+          >Add User</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
